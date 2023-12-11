@@ -1,0 +1,11 @@
+#define miniC_VERSION_MAJOR @miniClib_VERSION_MAJOR@
+#define miniC_VERSION_MINOR @miniClib_VERSION_MINOR@
+
+#ifndef WIN32
+    #define DllExport
+    #define DllImport
+#else
+    #define DllExport   __declspec( dllexport )
+    #define DllImport   __declspec( dllimport )
+#endif
+
