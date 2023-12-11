@@ -26,7 +26,3 @@ target_link_libraries(
 )
 include(GoogleTest)
 gtest_discover_tests(${PROJECT_NAME})
-
-include(CTest)
-add_test(NAME ${PROJECT_NAME}
-         COMMAND ${PROJECT_NAME})
