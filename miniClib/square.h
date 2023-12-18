@@ -8,7 +8,7 @@ extern "C" {  // only need to export C interface if
               // used by C++ source code
 #endif
 
-DllExport int square(int a);
+DECLSPEC int square(int a);
 
 #ifdef __cplusplus
 }

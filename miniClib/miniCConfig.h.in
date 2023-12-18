@@ -1,11 +1,17 @@
+#ifndef MINICCONFIG_H
+#define MINICCONFIG_H
+
 #define miniC_VERSION_MAJOR @miniClib_VERSION_MAJOR@
 #define miniC_VERSION_MINOR @miniClib_VERSION_MINOR@
 
-#ifndef WIN32
-    #define DllExport
-    #define DllImport
-#else
-    #define DllExport   __declspec( dllexport )
-    #define DllImport   __declspec( dllimport )
+#if defined(_WIN32)
+#  if defined(EXPORTING_MINICLIB)
+#    define DECLSPEC __declspec(dllexport)
+#  else
+#    define DECLSPEC __declspec(dllimport)
+#  endif
+#else // non windows
+#  define DECLSPEC
 #endif
 
+#endif
